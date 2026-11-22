@@ -34,3 +34,8 @@ The dataset file is not included in this repository. Place the authorized source
 ## Reproducibility note
 
 The notebook reads `Median_Prices.xls` from its working directory. The file name is retained from the original practical. Confirm the dataset's file format and source before rerunning; adjust the data-loading function if the source file is an Excel workbook rather than CSV-formatted text. Re-run the notebook to regenerate metrics before quoting any scores.
+
+
+## Validation consideration
+
+For the SGD and regularized-regression workflows, standardization is fitted on the training split and then applied to the held-out test split. The practical's earlier missing-value imputation is still performed before the split; for a fully leakage-safe evaluation, move imputation into a scikit-learn pipeline and fit it only within each training fold.
