@@ -33,3 +33,8 @@ The input file expected by the notebook is `Uad.xls`. The dataset is not include
 ## Reproducibility note
 
 The notebook expects `Uad.xls` in its working directory. Confirm the dataset's file format and source before rerunning; adjust the data-loading function if necessary. Re-run the notebook before quoting model metrics because results depend on the chosen split, estimator and evaluation method.
+
+
+## Evaluation notes
+
+The notebook uses probability estimates from `predict_proba` for ROC curves and cross-validation for model comparison. The Gradient Boosting cross-validation cell uses the Gradient Boosting estimator. Re-run with the input dataset to regenerate outputs and confirm the metrics for your environment.
